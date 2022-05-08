@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+
+.text-in-img {
+    position: relative;
+
+    z-index: -1;
+
+    // & img {
+    //     position: absolute;
+    //     width: 100%;
+    //     opacity: 0;
+    //     filter: brightness(50%);
+    //     animation: change-img-anim 30s infinite;
+
+    // }
+
+    // @for $i from 1 through 3 {
+    //     img:nth-child(#{$i}) { 
+    //         animation-delay: #{$i*10-10}s; 
+    //     }
+    // }
+
+    & p {
+        position: absolute;/*絶対配置*/
+        color: white;
+        font-weight: bold;
+        font-size: 6vmax; /*サイズ2倍*/
+        font-family :'Water Brush', cursive;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:0;
+        padding:0;
+        z-index: 1;
+    }
+
+}
+
+.swiper-img {
+    transition-delay: 0s;
+    // animation-name: mv01-fadeIn;
+    // animation-duration: 1s;
+    // animation-iteration-count: infinite;
+    filter: brightness(50%);
+    // filter: blur(40px);
+}
+
+
+// @keyframes mv01-fadeIn {
+//     0% {
+//       filter: blur(400px), brightness(50%);
+//     }
+//     100% {
+//       filter: blur(0), brightness(50%);
+//     }
+// }
+
+
+/* もし画像のサイズを◯◯pxというように固定したいときは、
+imgはwidth:100%のままに、親要素のdivに対してwidth:◯◯pxと指定しましょう。
+詳しい解説は省きますが、意図せずレイアウトが崩れるのを防ぐことができます。 */
