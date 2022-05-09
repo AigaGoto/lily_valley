@@ -7,23 +7,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // ヘッダーの構築
 export default function Header() {
     return(
-        <div className={style.header}>
+        <div className="header" >
             <HeaderLink link='/' text='Home' />
             <HeaderLink link='/about' text='About' />
-            <FontAwesomeIcon icon={faTwitter} className={style.headIcon} />
-            <FontAwesomeIcon icon={faInstagram} />
-            <FontAwesomeIcon icon={faLine} />
+            <HeaderIcon url="https://twitter.com/lily_valley___" icon={faTwitter} />
+            <HeaderIcon url="https://www.instagram.com/used_lily_valley.___/" icon={faInstagram} />
+            <HeaderIcon url="https://line.me/R/ti/p/@323ahnxo" icon={faLine} />
         </div>
     )
 }
 
-// ヘッダーの要素の枠組み
+// ヘッダーのページ遷移要素の枠組み
 function HeaderLink(props: any) {
     return (
         <Link href={props.link}>
-                    <a className={style.btnlinestretches4}>
+                    <a className="btnlinestretches4" >
                         <span >{props.text}</span>
                     </a>
         </Link>
+    )
+}
+
+// ヘッダーのアイコンの枠組み
+function HeaderIcon(props: any) {
+    return (
+        <a href={props.url} target='_blank' rel="noopener noreferrer">
+            <FontAwesomeIcon icon={props.icon} className="headerIcon" />
+        </a>
     )
 }
